@@ -1,0 +1,103 @@
+
+body {
+  background-color: #8080804d;
+  margin: 10px;
+  position: relative;
+  width: 99%;
+  min-height: 100%;
+}
+h2 {
+  color: #000407;
+  left: 20%;
+  top: 50%;
+  transform: translateX(40%);
+  
+}
+
+
+.form-control {
+  background-color: #f2eeee;
+}
+.btn-primary {  
+  background-color: #BFBFBF;
+  width: 99%;
+  margin: 5px;
+}
+.btn-secondary {
+  background-color: #BFBFBF;
+  width: 99%;
+  transform: translateX(1%);
+  
+ 
+}
+
+.img-fluid{
+  display: block;
+  width: 83%;
+  margin: 0 auto;
+  margin-top: 3px;
+  height: auto;
+}
+.container {
+  background-color: #fff;
+  width: 90%; /* Ancho del contenedor al 90% del ancho de la ventana */
+  max-width: 800px; /* Ancho máximo del contenedor para evitar que se vuelva demasiado ancho en pantallas grandes */
+  margin: 0 auto; /* Centrar horizontalmente */
+  height: 580px;
+  position: relative;
+  z-index: 1;
+  display: flex; /* Usando flexbox */
+  flex-direction: column; /* Para apilar elementos verticalmente */
+  justify-content: center; /* Para centrar verticalmente */
+}
+
+.form-label{
+  color: #000407;
+}
+
+.circulo {
+  width: 25vw; /* Utilizando vw (viewport width) para que el círculo sea el 25% del ancho de la ventana */
+  height: 25vw;
+  background-color: #B8B8B8;
+  border-radius: 50%;
+  background-size: cover;
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  left: 10%; /* Ajusta la posición desde el lado izquierdo */
+  transform: translate(-50%, -50%);
+}
+
+.circulo2 {
+  width: 10vw; /* Utilizando vw para que el círculo sea el 8% del ancho de la ventana */
+  height: 10vw;
+  background-color: #B8B8B8;
+  border-radius: 50%;
+  background-size: cover;
+  position: absolute;
+  top: 12%; /* Ajusta la posición desde la parte superior */
+  right: 2%; /* Ajusta la posición desde el lado derecho */
+  transform: translate(-50%, -50%);
+}
+
+.rectangulo {
+  width: 15vw; /* Utilizando vw para que el triángulo sea el 15% del ancho de la ventana */
+  height: 23vw; /* Ajustado para que el triángulo tenga una relación de aspecto adecuada */
+  background-color:#B8B8B8;
+  background-size: cover;
+  position: absolute;
+  top: 80%; /* Ajusta la posición desde la parte superior */
+  right: 5%; /* Ajusta la posición desde el lado derecho */
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 95%; /* Cambiado para adaptarse a pantallas más pequeñas */
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 70%; /* Mantenido para pantallas más grandes */
+  }
+}
