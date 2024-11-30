@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="style4.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="author" content="Eym">
+    <meta name="description" content="EYM | Inventario de Productos">
+    <meta name="keywords" content="HTML, CSS, JavaScript, React">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EYM | Inventario de Productos</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/imagenes-desarrolladores/Imagen1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="/css/style4.css" rel="stylesheet">
+</head>
+<body> 
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-md navbar-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <button id="btnRegresar" class="btn btn-regresar" style="display: none;">Regresar</button>
+        <div class="collapse navbar-collapse" id="navbar-toggler">
+            <a class="navbar-brand" href="#">
+                <img src="imagenes/imagenes-desarrolladores/Imagen1.png" width="50" alt="Logo de la página web">
+            </a>
+            <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Proveedores">Proveedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="Login no-section-change">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Seccion Hero -->
+<section id="inicio" class="hero align-items-stretch"> 
+    <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
+        <img class="hero-imagen-desarrollador rounded-circle" src="imagenes/imagenes-desarrolladores/Imagen1.png" alt="Foto de EYM">
+        <h1 style="font-family: 'Nilland BC', sans-serif;">BIENVENIDO A EMIS</h1>
+        <h2>Gestión ideal de tu inventario, Éxito total en tu negocio.</h2>
+    </div>
+    <div class="hero-inferior">
+        <img class="hero-inferior-imagen img-fluid" src="imagenes/imagenes-desarrolladores/inicio.png" alt="Monitor, laptop y logos de HTML, CSS, JavaScript y React.">
+    </div>
+</section>
+
+<!-- Sección de Productos -->
+<section id="productos" class="contacto seccion-clara" style="display: none;">
+    <div class="container">
+        <div class="container text-center rectangulo">
+            <h2 class="seccion-titulo">Explora nuestros Productos</h2>
+            <p class="seccion-texto">Aquí encontrarás una amplia variedad de productos disponibles para satisfacer tus necesidades.</p>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img1.jpeg" class="card-img-top producto-imagen" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 1</h5>
+                            <p class="card-text">Cascos,Soplete,Soldadura ,Cinta de peligro .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img2.jpeg" class="card-img-top producto-imagen" alt="Producto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 2</h5>
+                            <p class="card-text">Guantes cortos,Largos,Soldador,Nitrilo,Aseo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img3.jpeg" class="card-img-top producto-imagen" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 3</h5>
+                            <p class="card-text">Visor,Gafas oscuras,Gafas claras,Vidrios,Pechera,Protector auditivo,Capucha.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img4.jpeg" class="card-img-top producto-imagen" alt="Producto 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 4</h5>
+                            <p class="card-text">Cinta de Peligro , Extintor ,Hoja de segueta,Puntillas,Brochas,Teflón ,Grata ,Lija.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img5.jpeg" class="card-img-top producto-imagen" alt="Producto 5">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 5</h5>
+                            <p class="card-text">Cinta metrica,Mascara 3M.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img6.jpeg" class="card-img-top producto-imagen" alt="Producto 6">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 6</h5>
+                            <p class="card-text">Filtro P100,Filtro 2097,Filtro 6003</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img7.jpeg" class="card-img-top producto-imagen" alt="Producto 7">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 7</h5>
+                            <p class="card-text">Disco de corte 7", Disco de desbaste 7",Disco de agoflex 7" .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img8.jpeg" class="card-img-top producto-imagen" alt="Producto 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 8</h5>
+                            <p class="card-text">Disco de corte 4", Disco de desbaste 4",Disco de agoflex 4"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img9.jpeg" class="card-img-top producto-imagen" alt="Producto 9">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 9</h5>
+                            <p class="card-text">Bolsa de fab.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img16.jpeg" class="card-img-top producto-imagen" alt="Producto 16">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 9</h5>
+                            <p class="card-text">Manometro</p>
+                        </div>
+                    </div>
+                </div>
+      
+               
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img12.jpeg" class="card-img-top producto-imagen" alt="Producto 12">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 10</h5>
+                            <p class="card-text">Extintores multiusos.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card producto-card">
+                        <img src="imagenes/imagenes-productos/img15.jpeg" class="card-img-top producto-imagen" alt="Producto 15">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 11</h5>
+                            <p class="card-text">Arnés.</p>
+                        </div>
+                    </div>
+                </div>
+               
+               
+    </div>
+</section>
+
+
+<section id="Proveedores" class="contacto seccion-clara" style="display: none;">
+    
+    <h2 class="seccion-proveedores-titulo"></h2>
+    <div class="proveedores-contenedor">
+      <div class="imagenes-Proveedores">
+        <img src="imagenes/imagenes-Proveedores/LogoSumatec.jpg" alt="Proveedor 1">
+      </div>
+      <div class="imagenes-Proveedores">
+        <img src="imagenes/imagenes-Proveedores/logocentral.PNG" alt="Proveedor 2">
+      </div>
+      <div class="imagenes-Proveedores">
+        <img src="imagenes/imagenes-Proveedores/logoguimar.PNG" alt="Proveedor 3">
+      </div>
+      <div class="imagenes-Proveedores">
+        <img src="imagenes/imagenes-Proveedores/logoo.png" alt="Proveedor 4">
+      </div>
+      <!-- Agrega más proveedores según sea necesario -->
+    </div>
+        <button onclick="irAPaginaRegistro()" class="btn btn-primary">Registrar Proveedor</button>
+      </div>
+  </section>
+
+<!-- Contacto -->
+<section id="contacto" class="contacto seccion-clara" style="display: none;">
+    <div class="container">
+        <div class="text-center d-flex flex-column align-items-center">
+            <h2 class="seccion-titulo col-12">‎ </h2>
+            <p class="descripcion col-12">¿Tienes alguna pregunta sobre nuestros productos? ¡No dudes en contactarnos!</p>
+            <div class="d-flex justify-content-center col-12 mb-3"> <!-- Asegúrate de que los botones se centren -->
+                <a href="mailto:almacen1@excedentesymetales.com" class="btn-contacto mx-2">
+                    <img src="imagenes/imagenes-desarrolladores/email.png" alt="Enviar" class="icono-correo">
+                </a>
+                <a href="https://wa.me/3014494862?text=Hola,%20me%20interesaría%20saber%20más%20sobre%20sus%20productos." class="btn-contacto mx-2" target="_blank">
+                    <img src="imagenes/imagenes-desarrolladores/whatsapp.png" alt="WhatsApp" class="icono-correo">
+                </a>
+            </div>
+            <!-- Video -->
+            <div class="col-12">
+                <video width="100%" controls>
+                    <source src="imagenes/imagenes-video_contacto/EXCEDENTES Y METALES_360p.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de página (footer) -->
+<footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center">
+    <img class="footer-logo" src="imagenes/imagenes-desarrolladores/icono-blanco.svg" alt="Logo del inventario">
+    <p class="footer-texto text-center">Explora nuestras redes y conócenos más.</p>
+    <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+        <a href="https://www.facebook.com/excedentes.sa.5" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/excedentesymetales/" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@excedentesymetales" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-youtube"></i>
+        </a>
+    </div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuItems = document.querySelectorAll('.nav-link');
+        const btnRegresar = document.getElementById('btnRegresar');
+
+        // Muestra la sección de inicio al cargar
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
+        });
+        document.getElementById('inicio').style.display = 'block'; // Asegúrate de mostrar la sección de inicio
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const sectionId = this.getAttribute('href').substring(1);
+
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Muestra la sección correspondiente
+                document.getElementById(sectionId).style.display = 'block';
+                
+                // Muestra el botón "Regresar" solo en las secciones indicadas
+                if (sectionId === 'productos' || sectionId === 'Proveedores' || sectionId === 'contacto') {
+                    btnRegresar.style.display = 'block';
+                } else {
+                    btnRegresar.style.display = 'none';
+                }
+            });
+        });
+
+        // Funcionalidad del botón "Regresar"
+        btnRegresar.addEventListener('click', function() {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Muestra la sección de inicio y oculta el botón "Regresar"
+            document.getElementById('inicio').style.display = 'block';
+            btnRegresar.style.display = 'none';
+        });
+    });
+
+
+    function irAPaginaRegistro() {
+        window.location.href = 'provedores.html'; // Cambia el nombre a la URL de la página deseada
+      }
+</script>

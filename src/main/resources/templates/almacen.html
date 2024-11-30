@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EMIS</title>
+  <script src="https://kit.fontawesome.com/d1aa6ee23e.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="/js/crud.js"></script>
+  <script src="login.js"></script>
+  <script src="/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  <link href="/css/style2.css" rel="stylesheet">
+  <script>
+    $(document).ready(function(){
+      $(".hamburger").click(function(){
+        $(".wrapper").toggleClass("collapse");
+      });
+    });
+  </script>
+</head>
+<body>
+ 
+<div class="wrapper">
+  <div class="top_navbar"> 
+    <div class="hamburger">
+       <div class="one"></div>
+       <div class="two"></div>
+       <div class="three"></div>
+    </div>
+    <div class="top_menu">
+      <div class="logo">EMIS</div>
+      <ul>
+        <div class="barra-busqueda">
+          <input type="text" id="campoBusqueda" placeholder="Buscar por nombre...">
+          <a href="#" onclick="buscarYMostrarLista()"><i class="fas fa-search"></i></a>
+      </div>
+      
+
+        <li class="notificaciones">
+          <a href="#" onclick="mostrarNotificaciones()">
+              <i class="fas fa-bell"></i>
+              <span id="punto-rojo" class="punto-rojo" style="display: none;"></span>
+          </a>
+          <div id="lista-notificaciones" class="menu-notificaciones" style="display: none;">
+              <!-- Aquí se agregarán las notificaciones de productos -->
+          </div>
+      </li>
+    <div id="menuUsuario" style="display: none; position: absolute; background-color: white; border: 1px solid #ddd; padding: 10px;">
+        <span id="nombreUsuarioDisplay"></span>
+    </div>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar">
+    <ul>
+      <li><a href="#" class="sidebar-link" onclick="cambiarContenido('content-1')">
+          <span class="icon"><i class="fa-solid fa-plus"></i></span>
+          <span class="title">Registrar</span></a></li>
+
+      <li><a href="#" class="sidebar-link" onclick="cambiarContenido('content-2'); obtenerProductos();">
+          <span class="icon"><i class="fa-solid fa-list"></i></span>
+          <span class="title">Listar</span></a></li>
+
+          <li><a href="#" class="sidebar-link" onclick="cambiarContenido('container-5');  event.stopPropagation(); ">
+            <span class="icon"><i class="fa-solid fa-clock-rotate-left" style="color: #c6d0d9;"></i></span>
+            <span class="title">Historial de Salida</span></a></li>
+
+      <li><a href="/req/login" class="sidebar-link">
+          <span class="icon"><i class="fa-solid fa-right-from-bracket" style="color: #c6d0d9;"></i></span>
+          <span class="title">Salir</span></a></li>
+          
+    </ul>
+  </div>
+  
+  <div class="main_container">
+    <div class="content content-1">
+      <form id="productoForm">
+        <h2>Registrar Producto</h2>
+        <div class="form-group">
+            <div class="form-group-item">
+              <label for="idProducto">ID Producto:</label>
+              <input type="text" id="idProducto" name="idProducto">
+            </div>
+            <div class="form-group-item">
+              <label for="NProducto">Nombre Producto:</label>
+              <input type="text" id="NProducto" name="NProducto">
+            </div>
+          </div>
+          
+          <div class="form-group">
+          <div class="form-group-item">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca">
+          </div>
+          <div class="form-group-item">
+            <label for="categoria">Categoría:</label>
+            <input type="text" id="categoria" name="categoria">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-group-item">
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color">
+          </div>
+          <div class="form-group-item">
+            <label for="dimension">Dimensión:</label>
+            <input type="text" id="dimension" name="dimension">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-group-item full-width">
+            <label for="itemDetailsDescription">.</label>
+            <textarea rows="4" class="form-control" placeholder="Descripción" name="itemDetailsDescription" id="itemDetailsDescription"></textarea>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="form-group-item full-width">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad">
+          </div>
+        </div>
+        <button type="button" class="btn btn-agregar btn-lg" onclick="agregarProducto()">Agregar</button>  
+        <button type="reset" class="btn btn-limpiar btn-lg">Limpiar</button>
+      </form>
+
+    </div>
+    
+    <div class="content content-2">
+      <h1>Lista de Productos</h1>
+      <div id="resultados-busqueda"></div>
+      <ul id="lista-productos"></ul>
+
+      <!-- Modal -->
+    </div>
+  </div>
+  
+</div>
+
+<div class="container-5 content" id="container-5">
+  <h2>Historial de Salidas de Productos</h2>
+
+  <div class="image-container">
+</div>
+
+
+  <div class="mb-3">
+    <button onclick="descargarPDF()" class="btn btn-danger">Descargar PDF</button>
+    <button onclick="descargarWord()" class="btn btn-primary">Descargar Word</button>
+    <button onclick="descargarExcel()" class="btn btn-success">Descargar Excel</button>
+</div>
+
+  <table class="table table-bordered" id="tablaSalidas">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Encargado</th>
+              <th>Solicitante</th>
+              <th>Fecha y Hora de Salida</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Categoría</th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- Las filas de datos se insertarán aquí dinámicamente -->
+      </tbody>
+  </table>
+</div>
+</body>
+</html>
